@@ -38,6 +38,26 @@ def error_not_tuple(obj, ref="object"):
     if is_tuple(obj) is False:
         raise TypeError(f"{ref} must be a tuple.")
 
+#~~~~SINGLE TYPE TRY COERCION~~~~#
+
+def try_to_int(data):
+    try:
+        return int(data)
+    except:
+        return data
+
+def try_to_float(data):
+    try:
+        return float(data)
+    except:
+        return data
+
+def try_to_string(data):
+    try:
+        return str(data)
+    except:
+        return data
+
 #~~~~MULTI-TYPE BOOLEAN-BASED CHECKING~~~~#
 
 def is_int_or_float(obj):
