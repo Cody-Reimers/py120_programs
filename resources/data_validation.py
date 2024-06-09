@@ -85,7 +85,7 @@ def error_not_int_or_float(obj, ref="object"):
     if is_int_or_float(obj) is False:
         raise TypeError(f"{ref} must be an integer or float.")
 
-def error_not_int_or_str(obj, ref="object"):
+def error_not_int_or_string(obj, ref="object"):
     if is_int_or_string(obj) is False:
         raise TypeError(f"{ref} must be an integer or string.")
 
