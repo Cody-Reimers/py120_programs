@@ -71,13 +71,13 @@ def error_not_same_type(test_type, subject, ref="object"):
 #~~~~MULTI-TYPE BOOLEAN-BASED CHECKING~~~~#
 
 def is_int_or_float(obj):
-    return isinstance(obj, int) or isinstance(obj, float)
+    return is_int(obj) or is_float(obj)
 
 def is_int_or_string(obj):
-    return isinstance(obj, int) or isinstance(obj, str)
+    return is_int(obj) or is_string(obj)
 
 def is_list_or_tuple(obj):
-    return isinstance(obj, list) or isinstance(obj, tuple)
+    return is_list(obj) or is_tuple(obj)
 
 #~~~~MULTI-TYPE ERROR-BASED CHECKING~~~~#
 
