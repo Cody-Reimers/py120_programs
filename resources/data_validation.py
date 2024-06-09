@@ -58,6 +58,16 @@ def try_to_string(data):
     except:
         return data
 
+#~~~~COMPARE TWO TYPES~~~~#
+
+def other_is_same_type(test_type, subject):
+    subject_type = type(subject)
+    return test_type == subject_type
+
+def error_not_same_type(test_type, subject, ref="object"):
+    if other_is_same_type(test_type, subject) is False:
+        raise TypeError(f"{ref} must be of type {test_type}.")
+
 #~~~~MULTI-TYPE BOOLEAN-BASED CHECKING~~~~#
 
 def is_int_or_float(obj):
