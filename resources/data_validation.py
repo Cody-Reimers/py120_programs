@@ -73,6 +73,9 @@ def error_not_same_type(test_type, subject, ref="object"):
 def is_int_or_float(obj):
     return isinstance(obj, int) or isinstance(obj, float)
 
+def is_int_or_string(obj):
+    return isinstance(obj, int) or isinstance(obj, str)
+
 def is_list_or_tuple(obj):
     return isinstance(obj, list) or isinstance(obj, tuple)
 
@@ -81,6 +84,10 @@ def is_list_or_tuple(obj):
 def error_not_int_or_float(obj, ref="object"):
     if is_int_or_float(obj) is False:
         raise TypeError(f"{ref} must be an integer or float.")
+
+def error_not_int_or_str(obj, ref="object"):
+    if is_int_or_string(obj) is False:
+        raise TypeError(f"{ref} must be an integer or string.")
 
 def error_not_list_or_tuple(obj, ref="object"):
     if is_list_or_tuple(obj) is False:
