@@ -60,12 +60,8 @@ def try_to_string(data):
 
 #~~~~COMPARE TWO TYPES~~~~#
 
-def other_is_same_type(test_type, subject):
-    subject_type = type(subject)
-    return test_type == subject_type
-
-def error_not_same_type(test_type, subject, ref="object"):
-    if other_is_same_type(test_type, subject) is False:
+def error_not_isinstance(subject, test_type, ref="object"):
+    if isinstance(subject, test_type) is False:
         raise TypeError(f"{ref} must be of type {test_type}.")
 
 #~~~~MULTI-TYPE BOOLEAN-BASED CHECKING~~~~#

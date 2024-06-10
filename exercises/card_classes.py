@@ -104,7 +104,7 @@ class Card:
 #~~~~DETERMINING CARD VALUE~~~~#
 
     def _comparitor(self, other, operator):
-        if dv.other_is_same_type(type(self), other) is False:
+        if dv.isinstance(other, type(self)) is False:
             return NotImplemented
 
         value1 = self._card_values[str(self)]
