@@ -43,19 +43,19 @@ def error_not_tuple(obj, ref="object"):
 def try_to_int(data):
     try:
         return int(data)
-    except:
+    except (TypeError, ValueError):
         return data
 
 def try_to_float(data):
     try:
         return float(data)
-    except:
+    except (TypeError, ValueError):
         return data
 
 def try_to_string(data):
     try:
         return str(data)
-    except:
+    except (TypeError, ValueError):
         return data
 
 #~~~~COMPARE TWO TYPES~~~~#
