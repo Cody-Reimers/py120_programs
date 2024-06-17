@@ -20,23 +20,23 @@ def is_tuple(obj):
 
 def error_not_int(obj, ref="object"):
     if is_int(obj) is False:
-        raise TypeError(f"{ref} must be an integer.")
+        raise TypeError(f"{repr(ref)} must be an integer.")
 
 def error_not_float(obj, ref="object"):
     if is_float(obj) is False:
-        raise TypeError(f"{ref} must be a float.")
+        raise TypeError(f"{repr(ref)} must be a float.")
 
 def error_not_string(obj, ref="object"):
     if is_string(obj) is False:
-        raise TypeError(f"{ref} must be a string.")
+        raise TypeError(f"{repr(ref)} must be a string.")
 
 def error_not_list(obj, ref="object"):
     if is_list(obj) is False:
-        raise TypeError(f"{ref} must be a list.")
+        raise TypeError(f"{repr(ref)} must be a list.")
 
 def error_not_tuple(obj, ref="object"):
     if is_tuple(obj) is False:
-        raise TypeError(f"{ref} must be a tuple.")
+        raise TypeError(f"{repr(ref)} must be a tuple.")
 
 #~~~~SINGLE TYPE TRY COERCION~~~~#
 
@@ -62,7 +62,7 @@ def try_to_string(data):
 
 def error_not_isinstance(subject, test_type, ref="object"):
     if isinstance(subject, test_type) is False:
-        raise TypeError(f"{ref} must be of type {test_type}.")
+        raise TypeError(f"{repr(ref)} must be of type {test_type}.")
 
 #~~~~MULTI-TYPE BOOLEAN-BASED CHECKING~~~~#
 
@@ -79,12 +79,12 @@ def is_list_or_tuple(obj):
 
 def error_not_int_or_float(obj, ref="object"):
     if is_int_or_float(obj) is False:
-        raise TypeError(f"{ref} must be an integer or float.")
+        raise TypeError(f"{repr(ref)} must be an integer or float.")
 
 def error_not_int_or_string(obj, ref="object"):
     if is_int_or_string(obj) is False:
-        raise TypeError(f"{ref} must be an integer or string.")
+        raise TypeError(f"{repr(ref)} must be an integer or string.")
 
 def error_not_list_or_tuple(obj, ref="object"):
     if is_list_or_tuple(obj) is False:
-        raise TypeError(f"{ref} must be a list or tuple.")
+        raise TypeError(f"{repr(ref)} must be a list or tuple.")
