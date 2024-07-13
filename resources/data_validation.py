@@ -96,3 +96,23 @@ def is_even(num):
 
 def is_odd(num):
     return num % 2 != 0
+
+#~~~~TESTING IF COLLECTION IS EMPTY~~~~#
+
+def is_empty_string(collection):
+    return collection == ""
+
+def is_empty_list(collection):
+    return collection == list()
+
+def is_empty_tuple(collection):
+    return collection == tuple()
+
+def is_empty_dictionary(collection):
+    return collection == dict()
+
+def is_empty_set(collection):
+    return collection == set()
+
+def is_empty_frozenset(collection):
+    return collection == frozenset()
