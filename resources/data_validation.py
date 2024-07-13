@@ -88,3 +88,11 @@ def error_not_int_or_string(obj, ref="object"):
 def error_not_list_or_tuple(obj, ref="object"):
     if is_list_or_tuple(obj) is False:
         raise TypeError(f"{repr(ref)} must be a list or tuple.")
+
+#~~~~TESTING NUMBER PARITY~~~~#
+
+def is_even(num):
+    return num % 2 == 0
+
+def is_odd(num):
+    return num % 2 != 0
