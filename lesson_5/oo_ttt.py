@@ -497,8 +497,8 @@ class TTTGame:
                       "Tic-Tac-Toe game!")
         print_waiting()
 
-    def play(self):
-        self._display_introduction()
+    def play_one_game(self):
+        self.board.reset()
         move, victory = None, False
 
         while victory is False:
@@ -516,6 +516,35 @@ class TTTGame:
 
         self._display_board_state("final")
         self._display_endgame(move)
+
+    def play_again(self):
+        continuing_answers = ("y", "yes", "continue", "again")
+        choice = None
+        ref = "Play Again Choice"
+
+        while choice not in continuing_answers:
+            print_program("Do you want to play another round of this game?")
+            self._prompt_quit()
+
+            try:
+                choice = get_user_input()
+                if choice not in continuing_answers:
+                    raise ValueError(f"{repr(ref)} must be one of " +
+                            terminal_join(list_of_reprs(continuing_answers)))
+            except ValueError as error:
+                print_error(error)
+
+    def play(self):
+        self._display_introduction()
+
+        while True:
+            self.play_one_game()
+ 
+            try:
+                self.play_again()
+            except GameLoopEndError:
+                break
+
         self._display_conclusion()
 
     #~~~~SETTER METHODS~~~~#
