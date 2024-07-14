@@ -70,6 +70,8 @@ def get_user_input():
     return user_value
 
 def terminal_join(items, seperater=",", terminal_seperater="or"):
+    items = [ str(item) for item in items ]
+
     if len(items) > 2:
         joined_items = f"{seperater} ".join(items[:-1])
         joined_items += f"{seperater} {terminal_seperater} {items[-1]}"
