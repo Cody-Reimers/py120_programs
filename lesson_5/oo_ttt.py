@@ -485,7 +485,7 @@ class TTTGame:
         print_waiting()
 
     def _display_endgame(self, where_final_move_at):
-        if self._is_board_tied():
+        if self.board.is_full():
             print_program("You both ran out of valid moves; the game is tied!")
             return
 
@@ -498,6 +498,7 @@ class TTTGame:
         print_waiting()
 
     def play_one_game(self):
+        self._display_introduction()
         self.board.reset()
         move, victory = None, False
 
@@ -535,11 +536,9 @@ class TTTGame:
                 print_error(error)
 
     def play(self):
-        self._display_introduction()
-
         while True:
             self.play_one_game()
- 
+
             try:
                 self.play_again()
             except GameLoopEndError:
