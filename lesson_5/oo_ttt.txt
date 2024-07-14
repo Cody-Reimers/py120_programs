@@ -1,0 +1,75 @@
+Tic-Tac-Toe is a pen-and-paper game where two players compete to get
+3-in-a-row of their icon on the board first: one player uses the symbol
+"O", and the other uses the symbol "X". If there are no empty spaces
+left on the board and neither player has won, it is a draw.
+
+-------------------------------------------------------------------------------
+
+Major Nouns:
+Game
+Player
+Board
+
+Major Verbs:
+Place icon
+Check for victory (implied)
+
+###############################################################################
+
+CRCS:
+
+TTTGame
+                                                        Superclasses: Object
+                                                        Subclasses: None
+-------------------------------------------------------------------------------
+Give board update                       | Player
+Get player choice                       | Board
+Check victory                           | 
+
+
+Player
+                                                        Superclasses: Object
+                                                        Subclasses: None
+-------------------------------------------------------------------------------
+Make move                               | 
+Ennumerate victories                    | 
+
+
+Board
+                                                        Superclasses: Object
+                                                        Subclasses: None
+-------------------------------------------------------------------------------
+Update moves                            | List or Dictionary
+Clear moves                             | 
+
+###############################################################################
+
+PEDAC for TTTGame.play()
+
+P:
+Input: Player choices
+Output: complete game of Tic-Tac-Toe
+
+E:
++ Moves should have result in the correct display from Board
++ Victories should be found correctly and end the game
++ The correct victor needs to be displayed
++ Ties should end the game and be announced by the game
+
+D:
++ Board object has list of marked spaces, and is
+    responsible for checking victories
++ Player object makes moves and passes them to TTTGame
++ TTTGame passes moves to Board
+
+A:
++ Display message setting up the game
++ While game continues:
+    + Show current Board state
+    + Get move for current Player's turn
+    + Check victories:
+        + Display victor if there is a victor
+        + End game if there is a victor or tie
++ Display final board state
++ Display final result
++ Display message concluding the game
