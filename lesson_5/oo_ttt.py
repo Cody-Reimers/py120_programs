@@ -567,4 +567,6 @@ try:
     game = TTTGame()
     game.play()
 except GameLoopEndError:
+    pass
+finally:
     print_program("See you next time!")
