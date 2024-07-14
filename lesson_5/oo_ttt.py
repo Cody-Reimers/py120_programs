@@ -124,11 +124,12 @@ class TTTSquare:
 
 class TTTBoard:
 
+    DEFAULT_STATE = TTT_NULL_MARK * 9
+
     #~~~~INITIALIZATION~~~~#
 
-    def __init__(self, marks=TTT_NULL_MARK*9):
-        self._squares = { num + 1: TTTSquare(marks[num]) for num
-                       in range(TTT_NUM_SQUARES) }
+    def __init__(self):
+        self.reset()
 
     #~~~~GETTER METHODS~~~~#
 
@@ -237,6 +238,10 @@ class TTTBoard:
 
     def update_square(self, key, mark):
         self.squares[key].mark = mark
+
+    def reset(self):
+        self._squares = { num + 1: TTTSquare(self.__class__.DEFAULT_STATE[num])
+                      for num in range(TTT_NUM_SQUARES) }
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #//////////////////////////////////////////////////////////////////////////////
