@@ -479,7 +479,8 @@ class TTTGame:
         print_waiting()
 
     def _display_board_state(self, time_frame):
-        clear_display()
+        if self.turn != 1:
+            clear_display()
         print_program(f"Here's the {time_frame} board state:")
         print_program(self.board)
         print_waiting()
@@ -498,6 +499,7 @@ class TTTGame:
         print_waiting()
 
     def play_one_game(self):
+        clear_display()
         self._display_introduction()
         self.board.reset()
         move, victory = None, False
