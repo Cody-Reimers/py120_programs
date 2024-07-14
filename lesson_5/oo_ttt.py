@@ -167,6 +167,9 @@ class TTTBoard:
         return all([ self.square_is_filled(identifier)
                  for identifier in identifiers ])
 
+    def is_full(self):
+        return len(self.empty_squares) == 0
+
     def line_is_victorious(self, line_type, line_number):
         identifiers = line_type[line_number]
         mark1, mark2, mark3 = [ self.square_mark(identifier)
@@ -387,12 +390,6 @@ class TTTGame:
 
     #~~~~FINDING VICTORY~~~~#
 
-    def _is_board_tied(self):
-        if len(self.board.empty_squares) == 0:
-            return True
-
-        return False
-
     def _is_there_a_victor(self):
         for line_type in TTT_LINES:
             for line_number in line_type:
@@ -507,7 +504,7 @@ class TTTGame:
             if self.current_player().is_computer is False:
                 self._display_board_state("new")
 
-            victory = self._is_there_a_victor() or self._is_board_tied()
+            victory = self._is_there_a_victor() or self.board.is_full()
             self.turn += 1 if victory is False else 0
 
         self._display_board_state("final")
